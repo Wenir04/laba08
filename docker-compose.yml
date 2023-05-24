@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  server:
+    build: ./server
+    ports:
+      - 5000:5000
+    networks:
+      - my-network
+
+  client:
+    build: ./client
+    ports:
+      - 80:80
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
